@@ -1,0 +1,7 @@
+{
+    "name": "Perry",
+    "creator": "Joe",
+    "description": "The real Perry the Platypus",
+    "version": "1.0.0",
+    "entry": "index.js"
+}

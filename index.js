@@ -14,6 +14,7 @@ import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"
 import { openGUI } from "./utils/overlay"
 import { resetWorld } from "./utils/world";
+import { data } from "./utils/data";
 
 register("command", (arg) => {  
   if (!arg) {
@@ -47,10 +48,10 @@ if (data.first_time) {
   data.save();
 
   ChatLib.chat("");
-  ChatLib.chat(`&r&d&m--------------&r${ consts.PREFIX }&r&d&m--------------`)
+  ChatLib.chat(`&r&7&m--------------&r${ consts.PREFIX }&r&7&m--------------`)
   ChatLib.chat(`&aUse '/perry' For settings!`)
   ChatLib.chat(`&aUse '/perry commands' For commands!`);
-  new TextComponent(`&aClick &3here&a for github link!`)
+  new TextComponent(`&aClick &3here&a to copy the GitHub link!`)
     .setClickAction("run_command")
     .setClickValue(`/ct copy https://github.com/Perry5596/Perry`)
     .chat()

@@ -61,6 +61,5 @@ if (data.first_time) {
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {
     setRegisters()
-    setMobHighlight()
   }
 });

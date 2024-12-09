@@ -58,7 +58,7 @@ class Settings {
   // Init Viligant Settings Page
   constructor() {
     this.initialize(this);
-    this.setCategoryDescription("General", `&f&l[&3Perry&6Client&7-v${version}&f]&r&3 by Perry5596`);
+    this.setCategoryDescription("General", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`);
     this.setCategoryDescription("Temp", "temp")
   }
 }

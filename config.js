@@ -1,4 +1,4 @@
-// Imports
+// --------------------------------- Imports ---------------------------------
 import { 
   @Vigilant,
   @SwitchProperty,
@@ -22,21 +22,55 @@ import { version } from "./utils/constants"
   }
 })
 
-// Settings Class
-class Settings {    
+// --------------------------------- Settings ---------------------------------
+class Settings { 
+  // Init Viligant Settings Page
+  constructor() {
+    this.initialize(this);
+    this.setCategoryDescription("General", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`);
+    this.setCategoryDescription("Temp", "temp")
+  }
+  // --------------------------------- General ---------------------------------
+
+  // --- Essential ---
+  @ButtonProperty({
+    name: "GitHub Link",
+    description: "A link to our official GitHub Repository for updates.",
+    placeholder: "Link",
+    category: "General",
+    subcategory: "Essential"
+  })
+  githubLink() {
+    const url =
+      "https://github.com/Perry5596/Perry";
+    java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
+  }
+
+  // --- Alerts ---
+  @SwitchProperty({
+    name: "Piggy Bank Alert",
+    description: "Alerts you when your piggy bank cracks.",
+    category: "General",
+    subcategory: "Alerts"
+  })
+  piggyBankAlert = true;
+
+  // --- Random ---
   @SliderProperty({
     name: "Random Slider 1",
     description: "Does Something",
     min: 0,
     max: 100,
-    category: "General"
+    category: "General",
+    subcategory: "Random"
   })
   sliderNumber = 0;
 
   @ColorProperty({
     name: 'Random Color 1',
     description: `Sets the color for something`,
-    category: 'General'
+    category: 'General',
+    subcategory: "Random"
   })
   colorColor = Color.WHITE;
 
@@ -55,11 +89,6 @@ class Settings {
   })
   switchBoolean = false;    
 
-  // Init Viligant Settings Page
-  constructor() {
-    this.initialize(this);
-    this.setCategoryDescription("General", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`);
-    this.setCategoryDescription("Temp", "temp")
-  }
 }
+
 export default new Settings();

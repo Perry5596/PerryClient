@@ -1,3 +1,4 @@
+// --------------------------------- Debug Message ---------------------------------
 register("command", () => {
     ChatLib.chat(
       `\n§3§lPerry§6Client §7Debug:
@@ -6,7 +7,8 @@ register("command", () => {
     );
   }).setCommandName("perryTest");
 
-// Imports
+
+// --------------------------------- Imports ---------------------------------
 
 import settings from "./config";
 
@@ -15,6 +17,27 @@ import { setRegisters } from "./utils/functions"
 import { openGUI } from "./utils/overlay"
 import { resetWorld } from "./utils/world";
 import { data } from "./utils/data";
+
+import { piggyBankTrigger } from "./features/General.js";
+
+// --------------------------------- Welcome Message ---------------------------------
+
+if (data.first_time) {
+  data.first_time = false; 
+  data.save();
+
+  ChatLib.chat("");
+  ChatLib.chat(`&r&7&m--------------&r${ consts.PREFIX }&r&7&m--------------`)
+  ChatLib.chat(`&aUse '/perry' For settings!`)
+  ChatLib.chat(`&aUse '/perry commands' For commands!`);
+  new TextComponent(`&aClick &3here&a to copy the GitHub link!`)
+    .setClickAction("run_command")
+    .setClickValue(`/ct copy https://github.com/Perry5596/Perry`)
+    .chat()
+  ChatLib.chat("");
+};
+
+// --------------------------------- Commands ---------------------------------
 
 register("command", (arg) => {  
   if (!arg) {
@@ -43,23 +66,18 @@ register("command", (arg) => {
   }
 }).setCommandName(`perry`, true).setAliases("perryp_", "per").setTabCompletions("gui", "version", "commands", "reload");
 
-if (data.first_time) {
-  data.first_time = false; 
-  data.save();
-
-  ChatLib.chat("");
-  ChatLib.chat(`&r&7&m--------------&r${ consts.PREFIX }&r&7&m--------------`)
-  ChatLib.chat(`&aUse '/perry' For settings!`)
-  ChatLib.chat(`&aUse '/perry commands' For commands!`);
-  new TextComponent(`&aClick &3here&a to copy the GitHub link!`)
-    .setClickAction("run_command")
-    .setClickValue(`/ct copy https://github.com/Perry5596/Perry`)
-    .chat()
-  ChatLib.chat("");
-};
-
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {
     setRegisters()
   }
 });
+
+// --------------------------------- Load Triggers ---------------------------------
+
+function registerTriggers() {
+  ChatLib.chat("Registering triggers..."); // Debug
+
+  piggyBankTrigger;
+}
+
+registerTriggers();

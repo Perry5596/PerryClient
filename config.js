@@ -17,7 +17,7 @@ import { version } from "./utils/constants"
 
 @Vigilant("Perry", "§3§lPerry§6Client", {
   getCategoryComparator: () => (a, b) => {
-    const categories = ["General", "Temp"]
+    const categories = ["General", "Fishing"]
     return categories.indexOf(a.name) - categories.indexOf(b.name);
   }
 })
@@ -28,7 +28,7 @@ class Settings {
   constructor() {
     this.initialize(this);
     this.setCategoryDescription("General", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`);
-    this.setCategoryDescription("Temp", "temp")
+    this.setCategoryDescription("Fishing", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`)
   }
   // --------------------------------- General ---------------------------------
 
@@ -74,10 +74,20 @@ class Settings {
   })
   colorColor = Color.WHITE;
 
+  // --------------------------------- Fishing ---------------------------------
+  // Renders
+  @SwitchProperty({
+    name: "Trophy Fishing Locations Overlay",
+    description: "Renders where to fish for specific trophy fish.",
+    category: "Fishing",
+    subcategory: "Renders"
+  })
+  renderTrophyLocations = true;
+
   @SelectorProperty({
     name: "Random Selector 1",
     description: "Selects something from a list",
-    category: "Temp",
+    category: "Fishing",
     options: ["1", "2", "3"]
   })
   selectorNumber = 0;
@@ -85,7 +95,7 @@ class Settings {
   @SwitchProperty({
     name: "Random Switch 1",
     description: "Switches something on or off",
-    category: "Temp"
+    category: "Fishing"
   })
   switchBoolean = false;    
 

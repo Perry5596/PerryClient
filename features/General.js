@@ -19,11 +19,9 @@ function triggerAlert(text, time) {
 
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
-registerWhen(register("chat", (message) => {
-    if (ChatLib.getChatMessage(message).trim().includes("§cYou died and your piggy bank cracked!")) {
-        triggerAlert("§c§lPIGGY CRACKED!", 400);
-    }
-}), () => settings.piggyBankAlert);
+registerWhen(register("chat", () => {
+    triggerAlert("§c§lPIGGY CRACKED!", 400);
+}).setCriteria("&cYou died and your piggy bank cracked!").setContains(), () => settings.piggyBankAlert);
 
 // --------------------------------- Overlays ---------------------------------
 

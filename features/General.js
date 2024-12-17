@@ -19,7 +19,7 @@ function triggerAlert(text, time) {
 
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
-const piggyBankTrigger = register("chat", (message, event) => {
+const piggyBankTrigger = register("chat", (message) => {
     const rawMessage = ChatLib.getChatMessage(message).trim(); // Extract the message
 
     // Make sure to include the Setting property to check if the alert is enabled...

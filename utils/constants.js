@@ -5,6 +5,11 @@ export const consts = {
   WIP: "&cThis feature is still in development!",
 };
 
+export const colors = {
+  AQUA: "0x00ffff",
+  YELLOW: "0xffff00",
+}
+
 // Credit: NWJN Addons
 export const comma = (num) => {
   if (num.toString()?.includes(".")) {

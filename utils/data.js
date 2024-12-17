@@ -4,7 +4,7 @@ export let data = new PogObject("Perry",{
     // Add in lines here for data you want to save:
     "first_time": true,
     "version": "1.0.0"
-}, "data.json")
+}, "/data/data.json")
 
 register("gameUnload", () => {
     data.save();

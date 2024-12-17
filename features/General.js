@@ -21,11 +21,8 @@ function triggerAlert(text, time) {
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
 registerWhen(register("chat", (message) => {
-    const rawMessage = ChatLib.getChatMessage(message).trim(); // Extract the message
-
-    // Make sure to include the Setting property to check if the alert is enabled...
-    if (rawMessage.includes("§cYou died and your piggy bank cracked!")) {
-        triggerAlert("§c§lPIGGY CRACKED!", 400); // Trigger the alert
+    if (ChatLib.getChatMessage(message).trim().includes("§cYou died and your piggy bank cracked!")) {
+        triggerAlert("§c§lPIGGY CRACKED!", 400);
     }
 }), () => settings.piggyBankAlert);
 

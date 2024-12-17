@@ -21,6 +21,11 @@ function findWorld(noFind = 10) {
   } catch (err) {}
 }
 
+register("command", (world) => {
+    world = getWorld();
+    ChatLib.chat(world);
+}).setName("worldTest");
+
 register("worldLoad", () => {
   setRegisters()
   findWorld()

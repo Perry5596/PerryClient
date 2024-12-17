@@ -20,7 +20,7 @@ function triggerAlert(text, time) {
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
 registerWhen(register("chat", () => {
-    triggerAlert("§c§lPIGGY CRACKED!", 400);
+    triggerAlert("§c§lPIGGY CRACKED!", 1000);
 }).setCriteria("&cYou died and your piggy bank cracked!").setContains(), () => settings.piggyBankAlert);
 
 // --------------------------------- Overlays ---------------------------------

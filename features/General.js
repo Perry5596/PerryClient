@@ -1,5 +1,4 @@
-// debug
-ChatLib.chat("General.js is loading!");
+ChatLib.chat("General.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";

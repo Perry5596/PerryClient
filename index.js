@@ -1,4 +1,4 @@
-ChatLib.chat("index.js is loading!");
+ChatLib.chat("index.js is loading!"); // Debug
 // --------------------------------- Debug Message ---------------------------------
 register("command", () => {
     ChatLib.chat(
@@ -7,7 +7,6 @@ register("command", () => {
    &3Perry§6Client &7v${JSON.parse(FileLib.read("Perry", "metadata.json")).version}`
     );
   }).setCommandName("perryTest");
-
 
 // --------------------------------- Imports ---------------------------------
 

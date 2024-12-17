@@ -1,3 +1,4 @@
+ChatLib.chat("index.js is loading!");
 // --------------------------------- Debug Message ---------------------------------
 register("command", () => {
     ChatLib.chat(
@@ -11,6 +12,7 @@ register("command", () => {
 // --------------------------------- Imports ---------------------------------
 
 import settings from "./config";
+import "./features/General";
 
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"
@@ -18,7 +20,6 @@ import { openGUI } from "./utils/overlay"
 import { resetWorld } from "./utils/world";
 import { data } from "./utils/data";
 
-import { piggyBankTrigger } from "./features/General.js";
 
 // --------------------------------- Welcome Message ---------------------------------
 
@@ -72,12 +73,5 @@ register("guiClosed", (event) => {
   }
 });
 
-// --------------------------------- Load Triggers ---------------------------------
-
-function registerTriggers() {
-  ChatLib.chat("Registering triggers..."); // Debug
-
-  piggyBankTrigger;
-}
-
-registerTriggers();
+// --------------------------------- Extra Triggers ---------------------------------
+ChatLib.chat("index.js is done loading!");

@@ -2,7 +2,8 @@
 ChatLib.chat("General.js is loading!");
 
 // --------------------------------- Imports ---------------------------------
-import Settings from "../config";
+import settings from "../config";
+import { registerWhen } from "../utils/functions";
 
 // --------------------------------- Variables ---------------------------------
 
@@ -19,14 +20,14 @@ function triggerAlert(text, time) {
 
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
-const piggyBankTrigger = register("chat", (message) => {
+registerWhen(register("chat", (message) => {
     const rawMessage = ChatLib.getChatMessage(message).trim(); // Extract the message
 
     // Make sure to include the Setting property to check if the alert is enabled...
-    if (Settings.piggyBankAlert && rawMessage.includes("§cYou died and your piggy bank cracked!")) {
+    if (rawMessage.includes("§cYou died and your piggy bank cracked!")) {
         triggerAlert("§c§lPIGGY CRACKED!", 400); // Trigger the alert
     }
-});
+}), () => settings.piggyBankAlert);
 
 // --------------------------------- Overlays ---------------------------------
 
@@ -52,4 +53,4 @@ register("renderOverlay", () => {
 });
 
 // --------------------------------- Exports ---------------------------------
-export { piggyBankTrigger };
+ChatLib.chat("General.js is done loading!");

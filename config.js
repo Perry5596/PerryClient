@@ -77,7 +77,7 @@ class Settings {
   // --------------------------------- Fishing ---------------------------------
   // Renders
   @SwitchProperty({
-    name: "Trophy Fishing Locations Overlay",
+    name: "Trophy Fishing Waypoints",
     description: "Renders where to fish for specific trophy fish.",
     category: "Fishing",
     subcategory: "Renders"

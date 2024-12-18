@@ -18,7 +18,7 @@ function makeTrophyWaypoint(name, x, y, z) {
     Tessellator.drawString(`${distance}m`, x, y + 1.25, z, colors.YELLOW, true);
 }
 // --------------------------------- Triggers ---------------------------------
-// Trophy Locations Render
+// Trophy Fish Waypoints
 registerWhen(register("renderWorld", () => {
     makeTrophyWaypoint("Flyfish/Volcanic", -355.5, 154, -840.5);
     makeTrophyWaypoint("Moldfin", -268.5, 100, -750.5);

@@ -8,7 +8,6 @@ import { getWorld } from "../utils/world";
 import { colors } from "../utils/constants";
 
 // --------------------------------- Functions ---------------------------------
-
 function makeTrophyWaypoint(name, x, y, z) {
     let distance = Math.floor(Math.sqrt(Math.pow(Player.getX() - x, 2)+ Math.pow(Player.getZ() - z, 2)));
     // (x, y, z, w, h, red, green, blue, alpha, seeThroughWalls?)
@@ -17,6 +16,7 @@ function makeTrophyWaypoint(name, x, y, z) {
     Tessellator.drawString(name, x, y + 1.5, z, colors.AQUA, true);
     Tessellator.drawString(`${distance}m`, x, y + 1.25, z, colors.YELLOW, true);
 }
+
 // --------------------------------- Triggers ---------------------------------
 // Trophy Fish Waypoints
 registerWhen(register("renderWorld", () => {
@@ -26,6 +26,5 @@ registerWhen(register("renderWorld", () => {
     makeTrophyWaypoint("Soul", -295.5, 135, -558.5);
     makeTrophyWaypoint("Karate", -221.5, 108, -569.5);
 }), () => settings.renderTrophyLocations && getWorld() == "Crimson Isle");
-
 
 ChatLib.chat("Trophy.js is done loading!"); // Debug

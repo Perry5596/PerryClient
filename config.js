@@ -13,7 +13,7 @@ import {
   Color
 } from "../Vigilance/index"
 
-import { version } from "./utils/constants"
+import { consts } from "./utils/constants"
 
 @Vigilant("Perry", "§3§lPerry§6Client", {
   getCategoryComparator: () => (a, b) => {
@@ -27,8 +27,8 @@ class Settings {
   // Init Viligant Settings Page
   constructor() {
     this.initialize(this);
-    this.setCategoryDescription("General", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`);
-    this.setCategoryDescription("Fishing", `&f&r[&3Perry&6Client&7-v${version}&f]&3 by Perry5596`)
+    this.setCategoryDescription("General", consts.HEADER + "&f&bGeneral Features\n");
+    this.setCategoryDescription("Fishing", consts.HEADER + "&f&bFishing Features\n")
   }
   // --------------------------------- General ---------------------------------
 

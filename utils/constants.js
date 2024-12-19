@@ -2,6 +2,7 @@ export const version = (JSON.parse(FileLib.read("Perry", "metadata.json"))).vers
 
 export const consts = {
   PREFIX: "&f&l[&3Perry&6Client&f]",
+  HEADER: "\n\n&f&r[&3Perry&6Client&7-v" + version + "&f]&3 by Perry5596\n\n",
   WIP: "&cThis feature is still in development!",
 };
 

@@ -4,8 +4,7 @@ ChatLib.chat("Dungeons.js is loading!"); // Debug
 import settings from "../config";
 import RenderLib from "RenderLib"
 import { registerWhen } from "../utils/functions";
-import { getWorld } from "../utils/world";
-import { colors } from "../utils/constants";
+import location from "../utils/Location";
 
 // --------------------------------- Variables ---------------------------------
 const name = Player.getName(); // Client's name
@@ -21,10 +20,10 @@ registerWhen(register("renderWorld", () => {
 
     PLAYERS.forEach(player => {
         if (player.getName() != name) {
-            RenderLib.drawEspBox(player.getRenderX(), player.getRenderY(), player.getRenderZ(), 1, 2, settings.ghostEspColor.getRed() / 255, settings.ghostEspColor.getGreen() / 255, settings.ghostEspColor.getBlue() / 255, settings.ghostEspColor.getAlpha(), true);
-            RenderLib.drawInnerEspBox(player.getRenderX(), player.getRenderY(), player.getRenderZ(), 1, 2, settings.ghostEspColor.getRed() / 255, settings.ghostEspColor.getGreen() / 255, settings.ghostEspColor.getBlue() / 255, settings.ghostEspColor.getAlpha() / 500, true);
+            RenderLib.drawEspBox(player.getRenderX(), player.getRenderY(), player.getRenderZ(), 1, 2, settings.dungeonTeammateESPColor.getRed() / 255, settings.dungeonTeammateESPColor.getGreen() / 255, settings.dungeonTeammateESPColor.getBlue() / 255, settings.dungeonTeammateESPColor.getAlpha(), true);
+            RenderLib.drawInnerEspBox(player.getRenderX(), player.getRenderY(), player.getRenderZ(), 1, 2, settings.dungeonTeammateESPColor.getRed() / 255, settings.dungeonTeammateESPColor.getGreen() / 255, settings.dungeonTeammateESPColor.getBlue() / 255, settings.dungeonTeammateESPColor.getAlpha() / 1000, true);
         }     
     });
-}), () => true);
+}), () => settings.dungeonTeammateESP && location.getWorld() == "Catacombs");
 
 ChatLib.chat("Dungeons.js is done loading!"); // Debug

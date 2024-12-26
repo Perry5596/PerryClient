@@ -2,9 +2,9 @@ ChatLib.chat("Trophy.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
-import RenderLib from "RenderLib"
+import location from "../utils/Location";
+import RenderLib from "RenderLib";
 import { registerWhen } from "../utils/functions";
-import { getWorld } from "../utils/world";
 import { colors } from "../utils/constants";
 
 // --------------------------------- Functions ---------------------------------
@@ -25,6 +25,6 @@ registerWhen(register("renderWorld", () => {
     makeTrophyWaypoint("Skeleton", -470.5, 104, -756.5);
     makeTrophyWaypoint("Soul", -295.5, 135, -558.5);
     makeTrophyWaypoint("Karate", -221.5, 108, -569.5);
-}), () => settings.renderTrophyLocations && getWorld() == "Crimson Isle");
+}), () => settings.renderTrophyLocations && location.getWorld() == "Crimson Isle");
 
 ChatLib.chat("Trophy.js is done loading!"); // Debug

@@ -2,10 +2,10 @@ ChatLib.chat("General.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
+import location from "../utils/Location";
 import RenderLib from "RenderLib";
 import { registerWhen } from "../utils/functions";
-import { colors, SMA } from "../utils/constants";
-import { getWorld } from "../utils/world";
+import { SMA } from "../utils/constants";
 
 // --------------------------------- Variables ---------------------------------
 
@@ -37,7 +37,7 @@ registerWhen(register("renderWorld", () => {
             RenderLib.drawInnerEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, settings.ghostEspColor.getRed() / 255, settings.ghostEspColor.getGreen() / 255, settings.ghostEspColor.getBlue() / 255, settings.ghostEspColor.getAlpha() / 1000, false);
         }
     });
-}), () => settings.ghostESP && getWorld() == "Dwarven Mines");
+}), () => settings.ghostESP && location.getWorld() == "Dwarven Mines");
 
 // --------------------------------- Overlays ---------------------------------
 

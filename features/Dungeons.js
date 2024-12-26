@@ -10,11 +10,7 @@ import location from "../utils/Location";
 const name = Player.getName(); // Client's name
 
 // --------------------------------- Triggers ---------------------------------
-
-// Plan right now is to locate the "EntityOtherPlayerMP" class, then get the name field from it.
-// I then need to check that name against the tab menu. If it matches any names visible in that
-// tab menu, I'll draw a box around that player.
-
+// Dungeon Teammate ESP
 registerWhen(register("renderWorld", () => {
     const PLAYERS = World.getAllPlayers().filter(player => player.getPing() > 0); // Checks to see if player is a real player, not an NPC
 

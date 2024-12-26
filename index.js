@@ -13,6 +13,7 @@ register("command", () => {
 import settings from "./config";
 import "./features/General";
 import "./features/Trophy";
+import "./features/Commands";
 
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"

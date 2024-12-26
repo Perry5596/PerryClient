@@ -14,6 +14,7 @@ import settings from "./config";
 import "./features/General";
 import "./features/Trophy";
 import "./features/Commands";
+import "./features/Dungeons";
 
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"

@@ -11,6 +11,9 @@ export const colors = {
   YELLOW: "0xffff00",
 }
 
+export const EntityCreeper = Java.type("net.minecraft.entity.monster.EntityCreeper");
+export const SMA = Java.type('net.minecraft.entity.SharedMonsterAttributes');
+
 // Credit: NWJN Addons
 export const comma = (num) => {
   if (num.toString()?.includes(".")) {

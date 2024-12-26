@@ -9,7 +9,8 @@ export const consts = {
 export const colors = {
   AQUA: "0x00ffff",
   YELLOW: "0xffff00",
-  RED: "0xff0000"
+  RED: "0xff0000",
+  LIME: "0x00ff00"
 }
 
 export const EntityCreeper = Java.type("net.minecraft.entity.monster.EntityCreeper");

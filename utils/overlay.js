@@ -1,6 +1,7 @@
 import settings from "../config";
+import location from "./Location";
+
 import { registerWhen } from "./functions";
-import { getWorld } from "./world";
 
 const GUI_INSTRUCT = "Use +/- to change scale or press R to reset";
 
@@ -109,7 +110,7 @@ export class Overlay {
                     Renderer.screen.getWidth() / 2 - Renderer.getStringWidth(GUI_INSTRUCT) / 1.2,
                     Renderer.screen.getHeight() / 2.4,
                 );
-            } else if (settings[this.setting] && (this.requires.has(getWorld()) || this.requires.has("all")) && !gui.isOpen()) {
+            } else if (settings[this.setting] && (this.requires.has(location.getWorld()) || this.requires.has("all")) && !gui.isOpen()) {
                 if (this.requires.has("misc")) {
                     if (!condition()) return;
                     background.func_146278_c(0);

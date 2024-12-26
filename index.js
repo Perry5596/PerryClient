@@ -11,6 +11,8 @@ register("command", () => {
 // --------------------------------- Imports ---------------------------------
 
 import settings from "./config";
+import location from "./utils/Location";
+
 import "./features/General";
 import "./features/Trophy";
 import "./features/Commands";
@@ -19,7 +21,6 @@ import "./features/Dungeons";
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"
 import { openGUI } from "./utils/overlay"
-import { resetWorld } from "./utils/world";
 import { data } from "./utils/data";
 
 
@@ -61,7 +62,7 @@ register("command", (arg) => {
       ChatLib.chat(`${ consts.PREFIX } &rWrite out commands here...`);
       break;
     case "reload":
-      resetWorld()
+      location.findWorld();
       ChatLib.chat(`${ consts.PREFIX } &aReloaded all registers!`);
       break;
     default:

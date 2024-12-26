@@ -4,6 +4,7 @@ ChatLib.chat("Trophy.js is loading!"); // Debug
 import settings from "../config";
 import location from "../utils/Location";
 import RenderLib from "RenderLib";
+
 import { registerWhen } from "../utils/functions";
 import { colors } from "../utils/constants";
 

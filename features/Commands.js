@@ -1,7 +1,10 @@
 ChatLib.chat("Commands.js is loading!"); // Debug
+
 // --------------------------------- Imports ---------------------------------
-import { comma } from "../utils/constants";
 import location from "../utils/Location";
+
+import { comma } from "../utils/constants";
+
 // --------------------------------- Commands ---------------------------------
 
 register("command", () => {

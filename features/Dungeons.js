@@ -3,8 +3,9 @@ ChatLib.chat("Dungeons.js is loading!"); // Debug
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
 import RenderLib from "RenderLib";
-import { registerWhen } from "../utils/functions";
 import location from "../utils/Location";
+
+import { registerWhen } from "../utils/functions";
 
 // --------------------------------- Variables ---------------------------------
 const name = Player.getName(); // Client's name

@@ -2,7 +2,9 @@ ChatLib.chat("General.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
+import RenderLib from "RenderLib"
 import { registerWhen } from "../utils/functions";
+import { colors, SMA } from "../utils/constants";
 
 // --------------------------------- Variables ---------------------------------
 
@@ -22,6 +24,23 @@ function triggerAlert(text, time) {
 registerWhen(register("chat", () => {
     triggerAlert("§c§lPIGGY CRACKED!", 1000);
 }).setCriteria("&cYou died and your piggy bank cracked!").setContains(), () => settings.piggyBankAlert);
+
+// Ghost ESP Trigger (Dwarven Mines GHOSTS)
+registerWhen(register("renderWorld", () => {
+    const GHOSTS = World.getAllEntitiesOfType(Java.type("net.minecraft.entity.monster.EntityCreeper").class);
+
+    GHOSTS.forEach(creeper => {
+        const x = creeper.getX();
+        const y = creeper.getY();
+        const z = creeper.getZ();
+
+        let maxHP = creeper.getEntity().func_110148_a(SMA.field_111267_a).func_111125_b();
+        if (maxHP == 1000000) { // Customize this for actual "GHOSTS"
+            RenderLib.drawEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, 1, 0, 0, 0.9, false);
+            RenderLib.drawInnerEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, 1, 0, 0, 0.5, false);
+        }
+    });
+}), () => true); // will be "settings.ghostESP"
 
 // --------------------------------- Overlays ---------------------------------
 

@@ -1,7 +1,12 @@
 ChatLib.chat("Commands.js is loading!"); // Debug
 // --------------------------------- Imports ---------------------------------
 import { comma } from "../utils/constants";
+import location from "../utils/Location";
 // --------------------------------- Commands ---------------------------------
+
+register("command", () => {
+    ChatLib.chat(location.getWorld());
+}).setName("getWorld", true);
 
 // Credit: NWJN Addons
 register("command", () => {

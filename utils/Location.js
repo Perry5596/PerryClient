@@ -1,5 +1,5 @@
 // Credit: Adapted from Volcaddons findworld
-import { setRegisters } from "./functions";
+import { delay, setRegisters } from "./functions";
 
 class Location {
     #world = undefined;

@@ -4,9 +4,11 @@ ChatLib.chat("General.js is loading!"); // Debug
 import settings from "../config";
 import location from "../utils/Location";
 import RenderLib from "RenderLib";
+import { consts } from "../utils/constants";
 
 import { registerWhen } from "../utils/functions";
 import { SMA } from "../utils/constants";
+import { data } from "../utils/data";
 
 // --------------------------------- Variables ---------------------------------
 
@@ -39,6 +41,35 @@ registerWhen(register("renderWorld", () => {
         }
     });
 }), () => settings.ghostESP && location.getWorld() == "Dwarven Mines");
+
+// Booster Cookie Notification Trigger
+register("renderWorld", () => {
+    const footer = TabList.getFooter();
+    const cookieBuffIndex = footer.indexOf("Cookie Buff");
+    const ranksIndex = footer.indexOf("Ranks");
+    if (cookieBuffIndex !== -1) {
+        let textAfterCookieBuff;
+        if (ranksIndex !== -1 && ranksIndex > cookieBuffIndex) {
+            textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length, ranksIndex).trim();
+        } else {
+            textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length).trim();
+        }
+        const active = textAfterCookieBuff.match("Not active!") ? false : true;
+
+        if (data.booster_cookie !== active) {
+            data.booster_cookie = active;
+            data.save();
+
+            if (active) {
+                ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is now active!\n`);
+            } else {
+                ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is no longer active!\n`);
+            }
+        }
+    } else {
+        ChatLib.chat("ERROR: 'Cookie Buff' not found in footer. Open issue on github.");
+    }
+});
 
 // --------------------------------- Overlays ---------------------------------
 

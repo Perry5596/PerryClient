@@ -17,7 +17,7 @@ import { consts } from "./utils/constants"
 
 @Vigilant("Perry", "§3§lPerry§6Client", {
   getCategoryComparator: () => (a, b) => {
-    const categories = ["General", "Fishing"]
+    const categories = ["General", "Dungeons", "Fishing"]
     return categories.indexOf(a.name) - categories.indexOf(b.name);
   }
 })
@@ -28,7 +28,8 @@ class Settings {
   constructor() {
     this.initialize(this);
     this.setCategoryDescription("General", consts.HEADER + "&f&bGeneral Features\n");
-    this.setCategoryDescription("Fishing", consts.HEADER + "&f&bFishing Features\n")
+    this.setCategoryDescription("Dungeons", consts.HEADER + "&f&bDungeon Features\n");
+    this.setCategoryDescription("Fishing", consts.HEADER + "&f&bFishing Features\n");
   }
   // --------------------------------- General ---------------------------------
 
@@ -90,6 +91,24 @@ class Settings {
     subcategory: "Random"
   })
   colorColor = Color.WHITE;
+
+  // --------------------------------- Dungeons ---------------------------------
+  // ESP's
+  @SwitchProperty({
+    name: "Dungeon Teammate ESP",
+    description: "Renders ESP for all teammates in Dungeons.",
+    category: "Dungeons",
+    subcategory: "ESP's"
+  })
+  dungeonTeammateESP = true;
+
+  @ColorProperty({
+    name: 'Dungeon Teammate ESP Color',
+    description: `Sets the color for the Dungeon Teammate ESP`,
+    category: 'Dungeons',
+    subcategory: "ESP's"
+  })
+  dungeonTeammateESPColor = Color.GREEN;
 
   // --------------------------------- Fishing ---------------------------------
   // Renders

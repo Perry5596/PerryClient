@@ -5,6 +5,7 @@ import settings from "../config";
 import RenderLib from "RenderLib"
 import { registerWhen } from "../utils/functions";
 import { colors, SMA } from "../utils/constants";
+import { getWorld } from "../utils/world";
 
 // --------------------------------- Variables ---------------------------------
 
@@ -30,17 +31,13 @@ registerWhen(register("renderWorld", () => {
     const GHOSTS = World.getAllEntitiesOfType(Java.type("net.minecraft.entity.monster.EntityCreeper").class);
 
     GHOSTS.forEach(creeper => {
-        const x = creeper.getX();
-        const y = creeper.getY();
-        const z = creeper.getZ();
-
         let maxHP = creeper.getEntity().func_110148_a(SMA.field_111267_a).func_111125_b();
-        if (maxHP == 1000000) { // Customize this for actual "GHOSTS"
-            RenderLib.drawEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, 1, 0, 0, 0.9, false);
-            RenderLib.drawInnerEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, 1, 0, 0, 0.5, false);
+        if (maxHP == 1_000_000) {
+            RenderLib.drawEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, settings.ghostEspColor.getRed() / 255, settings.ghostEspColor.getGreen() / 255, settings.ghostEspColor.getBlue() / 255, 1, false);
+            RenderLib.drawInnerEspBox(creeper.getRenderX(), creeper.getRenderY(), creeper.getRenderZ(), 0.6, 1.7, settings.ghostEspColor.getRed() / 255, settings.ghostEspColor.getGreen() / 255, settings.ghostEspColor.getBlue() / 255, 0.5, false);
         }
     });
-}), () => true); // will be "settings.ghostESP"
+}), () => settings.ghostESP && getWorld() == "Dwarven Mines");
 
 // --------------------------------- Overlays ---------------------------------
 

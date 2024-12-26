@@ -55,6 +55,23 @@ class Settings {
   })
   piggyBankAlert = true;
 
+  // --- ESP's ---
+  @SwitchProperty({
+    name: "Ghost ESP",
+    description: "Renders ESP for Ghosts in the Dwarven Mines.",
+    category: "General",
+    subcategory: "ESP's"
+  })
+  ghostESP = true;
+
+  @ColorProperty({
+    name: 'Ghost ESP Color',
+    description: `Sets the color for the Ghost ESP`,
+    category: 'General',
+    subcategory: "ESP's"
+  })
+  ghostEspColor = Color.RED;
+
   // --- Random ---
   @SliderProperty({
     name: "Random Slider 1",

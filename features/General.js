@@ -2,7 +2,7 @@ ChatLib.chat("General.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
-import RenderLib from "RenderLib"
+import RenderLib from "RenderLib";
 import { registerWhen } from "../utils/functions";
 import { colors, SMA } from "../utils/constants";
 import { getWorld } from "../utils/world";

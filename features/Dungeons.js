@@ -2,7 +2,7 @@ ChatLib.chat("Dungeons.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
-import RenderLib from "RenderLib"
+import RenderLib from "RenderLib";
 import { registerWhen } from "../utils/functions";
 import location from "../utils/Location";
 

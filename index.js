@@ -6,7 +6,7 @@ register("command", () => {
    &eCT Version: &7v${ChatTriggers.MODVERSION}
    &3Perry§6Client &7v${JSON.parse(FileLib.read("Perry", "metadata.json")).version}`
     );
-  }).setCommandName("perryTest");
+  }).setCommandName("pcTest");
 
 // --------------------------------- Imports ---------------------------------
 
@@ -32,8 +32,8 @@ if (data.first_time) {
 
   ChatLib.chat("");
   ChatLib.chat(`&r&7&m--------------&r${ consts.PREFIX }&r&7&m--------------`)
-  ChatLib.chat(`&aUse '/perry' For settings!`)
-  ChatLib.chat(`&aUse '/perry commands' For commands!`);
+  ChatLib.chat(`&aUse '/pc' For settings!`)
+  ChatLib.chat(`&aUse '/pc commands' For commands!`);
   new TextComponent(`&aClick &3here&a to copy the GitHub link!`)
     .setClickAction("run_command")
     .setClickValue(`/ct copy https://github.com/Perry5596/Perry`)
@@ -68,9 +68,9 @@ register("command", (arg) => {
     case "help":
       ChatLib.chat(`${ consts.PREFIX } &rWrite out help here...`);
     default:
-      ChatLib.chat(`${consts.PREFIX} &r\n/perry => opens settings\n/perry gui => opens gui mover\n/perry version => gets the current Perry Client version\n/perry commands => see all commands\n/perry reload => reloads all registers in case they aren't working`)
+      ChatLib.chat(`${consts.PREFIX} &r\n/pc => opens settings\n/pc gui => opens gui mover\n/pc version => gets the current Perry Client version\n/pc => see all commands\n/pc reload => reloads all registers in case they aren't working`)
   }
-}).setCommandName(`perry`, true).setAliases("perryp_", "per").setTabCompletions("gui", "version", "commands", "reload");
+}).setCommandName(`pc`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload");
 
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {

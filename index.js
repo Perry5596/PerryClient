@@ -70,7 +70,7 @@ register("command", (arg) => {
     default:
       ChatLib.chat(`${consts.PREFIX} &r\n/pc => opens settings\n/pc gui => opens gui mover\n/pc version => gets the current Perry Client version\n/pc => see all commands\n/pc reload => reloads all registers in case they aren't working`)
   }
-}).setCommandName(`pc`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload");
+}).setCommandName(`pc`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload", "help");
 
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {

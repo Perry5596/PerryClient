@@ -5,7 +5,6 @@
 </p>
 
 <p align="center">
-    </br>
     <img src="https://img.shields.io/github/v/release/Perry5596/Perry?style=flat-square" alt="GitHub release (latest by date)">
     <img src="https://img.shields.io/github/languages/code-size/Perry5596/Perry?style=flat-square" alt="Code Size">
     <img src="https://img.shields.io/github/license/Perry5596/Perry?style=flat-square" alt="License">

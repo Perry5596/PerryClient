@@ -65,6 +65,8 @@ register("command", (arg) => {
       location.findWorld();
       ChatLib.chat(`${ consts.PREFIX } &aReloaded all registers!`);
       break;
+    case "help":
+      ChatLib.chat(`${ consts.PREFIX } &rWrite out help here...`);
     default:
       ChatLib.chat(`${consts.PREFIX} &r\n/perry => opens settings\n/perry gui => opens gui mover\n/perry version => gets the current Perry Client version\n/perry commands => see all commands\n/perry reload => reloads all registers in case they aren't working`)
   }

@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/Perry5596/Perry" target="_blank">
-      <img width="69%" src="assets/PerryClient-logo.png" alt="PerryClient Logo">
+      <img width="69%" src="assets/PerryClient-title-logo.png" alt="PerryClient Logo">
     </a>
 </p>
 

@@ -1,14 +1,14 @@
 <p align="center">
-    <a href="https://github.com/Perry5596/Perry" target="_blank">
+    <a href="https://github.com/Perry5596/PerryClient" target="_blank">
       <img width="69%" src="assets/PerryClient-title-logo.png" alt="PerryClient Logo">
     </a>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/Perry5596/Perry?style=flat-square" alt="GitHub release (latest by date)">
-    <img src="https://img.shields.io/github/languages/code-size/Perry5596/Perry?style=flat-square" alt="Code Size">
-    <img src="https://img.shields.io/github/license/Perry5596/Perry?style=flat-square" alt="License">
-    <img src="https://img.shields.io/github/last-commit/Perry5596/Perry?style=flat-square" alt="Last Commit">
+    <img src="https://img.shields.io/github/v/release/Perry5596/PerryClient?style=flat-square" alt="GitHub release (latest by date)">
+    <img src="https://img.shields.io/github/languages/code-size/Perry5596/PerryClient?style=flat-square" alt="Code Size">
+    <img src="https://img.shields.io/github/license/Perry5596/PerryClient?style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/last-commit/Perry5596/PerryClient?style=flat-square" alt="Last Commit">
 </p>
 
 ## Table of Contents
@@ -32,7 +32,7 @@
 
 ### <u>Installation:</u>
 
-1. **Download:** Download the latest release of the module from the [Releases page](https://github.com/Perry5596/Perry/releases).
+1. **Download:** Download the latest release of the module from the [Releases page](https://github.com/Perry5596/PerryClient/releases).
 2. **Unzip:** Extract the contents of the downloaded file. You should see a folder named "PerryClient".
 3. **Accessing ChatTriggers:** Launch Minecraft and enter the command `/ct files` to open the ChatTriggers directory.
 4. **Integration:** Move the "PerryClient" folder into the "modules" folder located in the ChatTriggers directory.

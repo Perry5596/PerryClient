@@ -36,7 +36,7 @@ if (data.first_time) {
   ChatLib.chat(`&aUse '/pc commands' For commands!`);
   new TextComponent(`&aClick &3here&a to copy the GitHub link!`)
     .setClickAction("run_command")
-    .setClickValue(`/ct copy https://github.com/Perry5596/Perry`)
+    .setClickValue(`/ct copy https://github.com/Perry5596/PerryClient`)
     .chat()
   ChatLib.chat("");
 };
@@ -68,7 +68,7 @@ register("command", (arg) => {
     case "help":
       ChatLib.chat(`${ consts.PREFIX } &rWrite out help here...`);
     default:
-      ChatLib.chat(`${consts.PREFIX} &r\n/pc => opens settings\n/pc gui => opens gui mover\n/pc version => gets the current Perry Client version\n/pc => see all commands\n/pc reload => reloads all registers in case they aren't working`)
+      ChatLib.chat(`${consts.PREFIX} &r\n/pc => opens settings\n/pc gui => opens gui mover\n/pc version => gets the current PerryClient version\n/pc => see all commands\n/pc reload => reloads all registers in case they aren't working`)
   }
 }).setCommandName(`pc`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload", "help");
 

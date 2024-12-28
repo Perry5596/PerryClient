@@ -15,7 +15,7 @@ import {
 
 import { consts } from "./utils/constants"
 
-@Vigilant("Perry", "§3§lPerry§6Client", {
+@Vigilant("PerryClient", "§3§lPerry§6Client", {
   getCategoryComparator: () => (a, b) => {
     const categories = ["General", "Dungeons", "Fishing"]
     return categories.indexOf(a.name) - categories.indexOf(b.name);
@@ -43,7 +43,7 @@ class Settings {
   })
   githubLink() {
     const url =
-      "https://github.com/Perry5596/Perry";
+      "https://github.com/Perry5596/PerryClient";
     java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
   }
 

@@ -1,4 +1,4 @@
-export const version = (JSON.parse(FileLib.read("Perry", "metadata.json"))).version
+export const version = (JSON.parse(FileLib.read("PerryClient", "metadata.json"))).version
 
 export const consts = {
   PREFIX: "&f&l[&3Perry&6Client&f]",

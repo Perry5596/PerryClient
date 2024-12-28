@@ -45,21 +45,27 @@ Congratulations! PerryClient is now ready to use.
 
 ### <u>General Commands</u>
 
-- `/perry help`: Displays the help menu in the chat.
-- `/perry version`: Displays the current version of the module and checks for updates.
-- `/perry reload`: Reloads the module.
+- `/pc help`: Displays the help menu in the chat.
+- `/pc version`: Displays the current version of the module and checks for updates.
+- `/pc reload`: Reloads the module.
 
 ## Features
 
 ### <u>Current Features</u>
 
-- **Feature:** Write feature here...
+#### General Features
 
-### <u>Planned Features</u>
+- **Piggy Alert:** A title alert that displays when your piggy bank cracks.
+- **Ghost ESP:** Renders ESP for the dwarven mines ghosts.
+- **Cookie Buff Alert:** A chat message alert that displays when your cookie buff expired since last login.
 
-- **Planned Feature:** Write feature here...
+#### Dungeon Features
 
-Stay tuned for updates as more features are added!
+- **Teammate ESP:** Renders ESP for all of your teammates in dungeons.
+
+#### Fishing Features
+
+- **Trophy Fishing Waypoints:** A waypoint render that displays all of the proper fishing locations for the given trophy fish.
 
 ---
 

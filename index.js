@@ -1,13 +1,4 @@
 ChatLib.chat("index.js is loading!"); // Debug
-// --------------------------------- Debug Message ---------------------------------
-register("command", () => {
-    ChatLib.chat(
-      `\n&3&lPerry&6Client &7Debug:
-   &eCT Version: &7v${ChatTriggers.MODVERSION}
-   &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
-    );
-  }).setCommandName("pcTest");
-
 // --------------------------------- Imports ---------------------------------
 
 import settings from "./config";
@@ -72,11 +63,21 @@ register("command", (arg) => {
   }
 }).setCommandName(`pc`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload", "help");
 
+// --------------------------------- Extra Triggers ---------------------------------
+// Debug Message
+register("command", () => {
+  ChatLib.chat(
+    `\n&3&lPerry&6Client &7Debug:
+ &eCT Version: &7v${ChatTriggers.MODVERSION}
+ &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
+  );
+}).setCommandName("pcTest");
+
+// GUI Closed Trigger
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {
     setRegisters()
   }
 });
 
-// --------------------------------- Extra Triggers ---------------------------------
-ChatLib.chat("index.js is done loading!");
+ChatLib.chat("index.js is done loading!"); // Debug

@@ -43,31 +43,33 @@ registerWhen(register("renderWorld", () => {
 }), () => settings.ghostESP && location.getWorld() == "Dwarven Mines");
 
 // Booster Cookie Notification Trigger
-register("renderWorld", () => {
-    const footer = TabList.getFooter();
-    const cookieBuffIndex = footer.indexOf("Cookie Buff");
-    const ranksIndex = footer.indexOf("Ranks");
-    if (cookieBuffIndex !== -1) {
-        let textAfterCookieBuff;
-        if (ranksIndex !== -1 && ranksIndex > cookieBuffIndex) {
-            textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length, ranksIndex).trim();
-        } else {
-            textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length).trim();
-        }
-        const active = textAfterCookieBuff.match("Not active!") ? false : true;
-
-        if (data.booster_cookie !== active) {
-            data.booster_cookie = active;
-            data.save();
-
-            if (active) {
-                ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is now active!\n`);
+register("postGuiRender", () => {
+    // postGuiRender may be temporary as it requrires the player to open some form
+    // of GUI to trigger the event. If a better event is found, it will be replaced.
+    if (location.getWorld() !== undefined) {
+        const footer = TabList.getFooter();
+        const cookieBuffIndex = footer.indexOf("Cookie Buff");
+        const ranksIndex = footer.indexOf("Ranks");
+        if (cookieBuffIndex !== -1) {
+            let textAfterCookieBuff;
+            if (ranksIndex !== -1 && ranksIndex > cookieBuffIndex) {
+                textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length, ranksIndex).trim();
             } else {
-                ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is no longer active!\n`);
+                textAfterCookieBuff = footer.substring(cookieBuffIndex + "Cookie Buff".length).trim();
+            }
+            const active = textAfterCookieBuff.match("Not active!") ? false : true;
+
+            if (data.booster_cookie !== active) {
+                data.booster_cookie = active;
+                data.save();
+
+                if (active) {
+                    ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is now active!\n`);
+                } else {
+                    ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is no longer active!\n`);
+                }
             }
         }
-    } else {
-        ChatLib.chat("ERROR: 'Cookie Buff' not found in footer. Open issue on github.");
     }
 });
 

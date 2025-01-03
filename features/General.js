@@ -84,13 +84,12 @@ registerWhen(register("renderTitle", (title) => {
     }
 }), () => settings.webhookToggle && settings.webhookURL.startsWith("https://discord.com/api/webhooks/"));
 
-// TODO: Find better way to detect when user comes back from AFK.
-register("tick", () => {
+register("step", () => {
     const looking = Player.lookingAt().toString().startsWith("Sign");
     if (afk && !looking) {
         afk = false;
     }
-})
+}).setDelay(30);
 
 // --------------------------------- Overlays ---------------------------------
 // Alert Overlay

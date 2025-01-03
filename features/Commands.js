@@ -2,10 +2,76 @@ ChatLib.chat("Commands.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import location from "../utils/Location";
+import settings from "../config";
 
 import { comma } from "../utils/constants";
+import { consts } from "../utils/constants";
+import { sendWebhook } from "../utils/webhook";
 
-// --------------------------------- Commands ---------------------------------
+// --------------------------------- Variables ---------------------------------
+let reminders = []; // Array to store active reminders
+
+// --------------------------------- Functions ---------------------------------
+// Send reminder function
+function sendReminder(reminder) {
+  if (settings.webhookToggle && settings.webhookURL.startsWith("https://discord.com/api/webhooks/")) {
+    sendWebhook("Reminder", reminder.message);
+  }
+  ChatLib.chat(`\n${consts.PREFIX}\n&6Reminder: &e"${reminder.message}"\n`);
+  reminders = reminders.filter(r => r !== reminder);
+}
+
+// --------------------------------- Commands ----------------------------e-----
+// Register the /remind command
+register("command", (time, ...messageParts) => {
+  if (!time) {
+      // Show usage instructions when no arguments are provided
+      ChatLib.chat("&bUsage: &a/remind {time in minutes} {message}");
+      ChatLib.chat("&bExample: &a/remind 10 Take a break!");
+      return;
+  }
+
+  const minutes = parseInt(time, 10);
+  const message = messageParts.join(" ");
+
+  // Validate time input
+  if (isNaN(minutes) || minutes <= 0) {
+      ChatLib.chat("&cInvalid time! Please specify the time in minutes as a positive number.");
+      return;
+  }
+
+  if (!message) {
+      ChatLib.chat("&cPlease provide a message for the reminder.");
+      return;
+  }
+
+  // Set up reminder
+  const reminder = {
+      time: Date.now() + minutes * 60000,
+      message: message,
+  };
+  reminders.push(reminder);
+
+  // Chat alert
+  ChatLib.chat(`${consts.PREFIX} &aReminder set! I will remind you in &e${minutes} minute(s): &f${message}`);
+
+  // Schedule webhook
+  setTimeout(() => {
+      sendReminder(reminder);
+
+  }, minutes * 60000);
+})
+  .setName("remind")
+  .setAliases("reminder", "remindme")
+  .setTabCompletions("{time in minutes} {message}");
+
+// Detect game close and send remaining reminders
+register("gameUnload", () => {
+  if (reminders.length > 0) {
+      reminders.forEach(reminder => sendReminder(reminder));
+  }
+});
+
 
 register("command", () => {
     ChatLib.chat(location.getWorld());

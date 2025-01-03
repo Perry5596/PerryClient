@@ -68,7 +68,10 @@ register("command", (time, ...messageParts) => {
 // Detect game close and send remaining reminders
 register("gameUnload", () => {
   if (reminders.length > 0) {
-      reminders.forEach(reminder => sendReminder(reminder));
+      reminders.forEach(reminder => {
+        reminder.message += "\n\n(GAME CLOSED) - Sending reminder early!"
+        sendReminder(reminder);
+  });
   }
 });
 

@@ -53,7 +53,7 @@ register("command", (time, ...messageParts) => {
   reminders.push(reminder);
 
   // Chat alert
-  ChatLib.chat(`${consts.PREFIX} &aReminder set! I will remind you in &e${minutes} minute(s): &f${message}`);
+  ChatLib.chat(`${consts.PREFIX} &aReminder set! We will remind you in &e${minutes} minute(s)!`);
 
   // Schedule webhook
   setTimeout(() => {

@@ -49,6 +49,10 @@ Congratulations! PerryClient is now ready to use.
 - `/pc version`: Displays the current version of the module and checks for updates.
 - `/pc reload`: Reloads the module.
 
+### <u>Functional Commands</u>
+
+- `/remind {time in minutes} {message}`: Sends a reminder to the chat in x amount of time. Also has an optional Discord webhook option.
+
 ## Features
 
 ### <u>Current Features</u>

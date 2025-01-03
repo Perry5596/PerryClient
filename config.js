@@ -47,6 +47,23 @@ class Settings {
     java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
   }
 
+  @SwitchProperty({
+    name: "Discord Webhook Toggle",
+    description: "Toggles the Discord Webhook for all reminders/alerts that go to webhooks.",
+    category: "General",
+    subcategory: "Essential"
+  })
+  webhookToggle = false;
+
+  @TextProperty({
+    name: "Discord Webhook URL",
+    description: "The URL for the Discord Webhook for all reminders/alerts that go to webhooks.",
+    placeholder: "Discord webhook url here...",
+    category: "General",
+    subcategory: "Essential"
+  })
+  webhookURL = "";
+
   // --- Alerts ---
   @SwitchProperty({
     name: "Piggy Bank Alert",

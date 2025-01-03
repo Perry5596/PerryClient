@@ -9,11 +9,13 @@ import { consts } from "../utils/constants";
 import { registerWhen } from "../utils/functions";
 import { SMA } from "../utils/constants";
 import { data } from "../utils/data";
+import { sendWebhook } from "../utils/webhook";
 
 // --------------------------------- Variables ---------------------------------
 
 let alertTimer = 0;
 let alertText = "";
+let afk = false;
 
 // --------------------------------- Functions ---------------------------------
 
@@ -73,8 +75,24 @@ register("postGuiRender", () => {
     }
 });
 
-// --------------------------------- Overlays ---------------------------------
+// AFK Webhook Notification Trigger
+registerWhen(register("renderTitle", (title) => {
+    if (title.includes("You are AFK") && !afk) {
+        afk = true;
 
+        sendWebhook("AFK Alert", "You have gone AFK!");
+    }
+}), () => settings.webhookToggle && settings.webhookURL.startsWith("https://discord.com/api/webhooks/"));
+
+// TODO: Find better way to detect when user comes back from AFK.
+register("tick", () => {
+    const looking = Player.lookingAt().toString().startsWith("Sign");
+    if (afk && !looking) {
+        afk = false;
+    }
+})
+
+// --------------------------------- Overlays ---------------------------------
 // Alert Overlay
 register("renderOverlay", () => {
     if (alertTimer > 0) {

@@ -9,6 +9,8 @@ import "./features/Trophy";
 import "./features/Commands";
 import "./features/Dungeons";
 
+import "./utils/bazaar";
+
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"
 import { openGUI } from "./utils/overlay"

@@ -11,6 +11,18 @@ import { sendWebhook } from "../utils/webhook";
 // --------------------------------- Variables ---------------------------------
 let reminders = []; // Array to store active reminders
 
+// --------------------------------- QOL Commands ---------------------------------
+register("command", () => { ChatLib.command("skyblock") }).setName("sb");
+register("command", () => { ChatLib.command("boostercookiemenu") }).setName("bc")
+register("command", () => { ChatLib.command("visit portalhub") }).setName("ph").setAliases("portal", "portals", "portalhub");
+register("command", () => { ChatLib.command("collections") }).setName("col").setAliases("coll");
+register("command", () => { ChatLib.command("skills") }).setName("sk").setAliases("skill");
+register("command", () => { ChatLib.command("warp hollows") }).setName("ch").setAliases("hollows", "crystal");
+register("command", () => { ChatLib.command("warp kuudra") }).setName("ku").setAliases("kuudra");
+register("command", () => { ChatLib.command("warp dungeon_hub") }).setName("dh");
+register("command", () => { ChatLib.command("warp museum") }).setName("museum");
+register("command", () => { ChatLib.command("warp garden") }).setName("garden");
+
 // --------------------------------- Functions ---------------------------------
 // Send reminder function
 function sendReminder(reminder) {
@@ -21,7 +33,7 @@ function sendReminder(reminder) {
   reminders = reminders.filter(r => r !== reminder);
 }
 
-// --------------------------------- Commands ----------------------------e-----
+// --------------------------------- Feature Commands ---------------------------------
 // Register the /remind command
 register("command", (time, ...messageParts) => {
   if (!time) {

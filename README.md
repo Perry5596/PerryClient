@@ -45,13 +45,14 @@ Congratulations! PerryClient is now ready to use.
 
 ### <u>General Commands</u>
 
-- `/pc help`: Displays the help menu in the chat.
-- `/pc version`: Displays the current version of the module and checks for updates.
-- `/pc reload`: Reloads the module.
+- `/pe help`: Displays the help menu in the chat.
+- `/pe version`: Displays the current version of the module and checks for updates.
+- `/pe reload`: Reloads the module.
 
 ### <u>Functional Commands</u>
 
 - `/remind {time in minutes} {message}`: Sends a reminder to the chat in x amount of time. Also has an optional Discord webhook option.
+- `/bzdata {item_name}`: Sends the current buy and sell prices of the given item. You can have spaces in the item name, it just has to be the correct name.
 
 ## Features
 

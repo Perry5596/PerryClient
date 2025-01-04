@@ -76,6 +76,8 @@ Congratulations! PerryClient is now ready to use.
 - **Piggy Alert:** A title alert that displays when your piggy bank cracks.
 - **Ghost ESP:** Renders ESP for the dwarven mines ghosts.
 - **Cookie Buff Alert:** A chat message alert that displays when your cookie buff expired since last login.
+- **AFK Alert:** Sends an alert message through the discord webhook link if it exists.
+- **Click-To-Visit:** Click a chat message to visit that person. Only applies when the chat includes the word "visit"
 
 #### Dungeon Features
 

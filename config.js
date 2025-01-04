@@ -90,6 +90,15 @@ class Settings {
   })
   ghostEspColor = Color.RED;
 
+  // --- QOL ---
+  @SwitchProperty({
+    name: 'Click To Visit',
+    description: 'Click a chat message that contains "visit" to visit that person.',
+    category: 'General',
+    subcategory: 'QOL'
+  })
+  clickToVisit = true;
+
   // --------------------------------- Dungeons ---------------------------------
   // ESP's
   @SwitchProperty({

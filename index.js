@@ -10,6 +10,7 @@ import "./features/Commands";
 import "./features/Dungeons";
 
 import "./utils/bazaar";
+import "./utils/uuid";
 
 import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"

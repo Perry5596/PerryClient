@@ -49,6 +49,19 @@ Congratulations! PerryClient is now ready to use.
 - `/pe version`: Displays the current version of the module and checks for updates.
 - `/pe reload`: Reloads the module.
 
+### <u>QOL Commands</u>
+
+- `/sb`: Opens the Skyblock menu
+- `/bc`: Opens the Booster Cookie menu
+- `/ph`: Visits the Portal Hub
+- `/col`: Opens the Collections menu
+- `/sk`: Opens the Skills menu
+- `/ch`: Warps to the Hollows
+- `/ku`: Warps to Kuudra
+- `/dh`: Warps to the Dungeon Hub
+- `/museum`: Warps to the Museum
+- `/garden`: Warps to the Garden
+
 ### <u>Functional Commands</u>
 
 - `/remind {time in minutes} {message}`: Sends a reminder to the chat in x amount of time. Also has an optional Discord webhook option.

@@ -55,7 +55,7 @@ register("command", (...itemParts) => {
     
     const prices = bazaar.getPrices(item);
     if (prices) {
-        ChatLib.chat(`${consts.PREFIX} - ${item}:\n&3Instant Buy: &e${comma(Math.round(prices[1]))}\n&3Instant Sell: &e${comma(Math.round(prices[0]))}\n&3Quantity: &e${consts.WIP}`); // Implement quantity later...
+        ChatLib.chat(`${consts.PREFIX} - ${item}:\n&3Instant Buy: &e${comma(Math.round(prices[1]))}\n&3Instant Sell: &e${comma(Math.round(prices[0]))}`);
     } else {
         ChatLib.chat(`${consts.PREFIX} &cItem not found in Bazaar data.`);
     }

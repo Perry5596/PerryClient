@@ -90,25 +90,6 @@ class Settings {
   })
   ghostEspColor = Color.RED;
 
-  // --- Random ---
-  @SliderProperty({
-    name: "Random Slider 1",
-    description: "Does Something",
-    min: 0,
-    max: 100,
-    category: "General",
-    subcategory: "Random"
-  })
-  sliderNumber = 0;
-
-  @ColorProperty({
-    name: 'Random Color 1',
-    description: `Sets the color for something`,
-    category: 'General',
-    subcategory: "Random"
-  })
-  colorColor = Color.WHITE;
-
   // --------------------------------- Dungeons ---------------------------------
   // ESP's
   @SwitchProperty({
@@ -136,21 +117,6 @@ class Settings {
     subcategory: "Renders"
   })
   renderTrophyLocations = true;
-
-  @SelectorProperty({
-    name: "Random Selector 1",
-    description: "Selects something from a list",
-    category: "Fishing",
-    options: ["1", "2", "3"]
-  })
-  selectorNumber = 0;
-
-  @SwitchProperty({
-    name: "Random Switch 1",
-    description: "Switches something on or off",
-    category: "Fishing"
-  })
-  switchBoolean = false;    
 
 }
 

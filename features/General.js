@@ -91,6 +91,16 @@ register("step", () => {
     }
 }).setDelay(30);
 
+// Click to Visit Trigger
+registerWhen(
+register("chat", (username, event) => {
+    cancel(event);
+    ChatLib.chat(new TextComponent(ChatLib.getChatMessage(event, true))
+        .setHover('show_text', `/visit ${username}`)
+        .setClick('run_command', `/visit ${username}`));
+}).setCriteria(/(?:(?:Guild|Party|Co-op|From|To) ?(?:>)?? |(?:(?:\[:v:\] )?(?: \+ )?(?:\[(?:[^\s]+)+\] )??))??(?:. )??(?:\[\w{3,}\+{0,2}\] )??(\w{1,16})(?: \[\w{1,6}\])??: .*visit.*$/i),
+() => settings.clickToVisit);
+
 // --------------------------------- Overlays ---------------------------------
 // Alert Overlay
 register("renderOverlay", () => {

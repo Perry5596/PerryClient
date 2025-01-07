@@ -68,7 +68,7 @@ register("command", (arg) => {
 // Debug Message
 register("command", () => {
   ChatLib.chat(
-    `\n&3&lPerry&6Client &7Debug:
+    `&3&lPerry&6Client &7Debug:
  &eCT Version: &7v${ChatTriggers.MODVERSION}
  &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
   );

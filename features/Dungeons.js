@@ -1,4 +1,4 @@
-ChatLib.chat("Dungeons.js is loading!"); // Debug
+console.log("Dungeons.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
@@ -23,4 +23,4 @@ registerWhen(register("renderWorld", () => {
     });
 }), () => settings.dungeonTeammateESP && location.getWorld() == "Catacombs");
 
-ChatLib.chat("Dungeons.js is done loading!"); // Debug
+console.log("Dungeons.js is done loading!"); // Debug

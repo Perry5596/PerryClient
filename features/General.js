@@ -1,5 +1,4 @@
-ChatLib.chat("General.js is loading!"); // Debug
-
+console.log("General.js is loading!"); // Debug
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
 import location from "../utils/Location";
@@ -81,7 +80,6 @@ registerWhen(register("postGuiRender", () => {
 registerWhen(register("renderTitle", (title) => {
     if (title.includes("You are AFK") && !afk) {
         afk = true;
-
         sendWebhook("AFK Alert", "You have gone AFK!");
     }
 }), () => settings.webhookToggle && settings.webhookURL.startsWith("https://discord.com/api/webhooks/"));
@@ -126,4 +124,4 @@ register("renderOverlay", () => {
 });
 
 // --------------------------------- Exports ---------------------------------
-ChatLib.chat("General.js is done loading!");
+console.log("General.js is done loading!"); // Debug

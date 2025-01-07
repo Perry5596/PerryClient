@@ -1,5 +1,4 @@
-ChatLib.chat("Trophy.js is loading!"); // Debug
-
+console.log("Trophy.js is loading!"); // Debug
 // --------------------------------- Imports ---------------------------------
 import settings from "../config";
 import location from "../utils/Location";
@@ -28,4 +27,4 @@ registerWhen(register("renderWorld", () => {
     makeTrophyWaypoint("Karate", -221.5, 108, -569.5);
 }), () => settings.renderTrophyLocations && location.getWorld() == "Crimson Isle");
 
-ChatLib.chat("Trophy.js is done loading!"); // Debug
+console.log("Trophy.js is done loading!"); // Debug

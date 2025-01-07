@@ -81,4 +81,4 @@ register("guiClosed", (event) => {
   }
 });
 
-ChatLib.chat("index.js is done loading!"); // Debug
+console.log("index.js is done loading!"); // Debug

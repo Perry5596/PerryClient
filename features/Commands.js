@@ -1,4 +1,4 @@
-ChatLib.chat("Commands.js is loading!"); // Debug
+console.log("Commands.js is loading!"); // Debug
 
 // --------------------------------- Imports ---------------------------------
 import location from "../utils/Location";
@@ -113,4 +113,4 @@ register("command", () => {
     ChatLib.chat(`\nName: ${looking.getName()}\nEntityClass: ${looking.getClassName()}\nPos: ${looking.getPos()}\nHP: ${comma(looking.getEntity().func_110143_aJ())}/${comma(looking.getEntity().func_110148_a(Java.type('net.minecraft.entity.SharedMonsterAttributes').field_111267_a).func_111125_b())}\n`)
   }).setName("entityInfo", true).setAliases("entity");
 
-ChatLib.chat("Commands.js is done loading!"); // Debug
+console.log("Commands.js is done loading!"); // Debug

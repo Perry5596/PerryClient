@@ -73,6 +73,14 @@ class Settings {
   })
   piggyBankAlert = true;
 
+  @SwitchProperty({
+    name: "Booster Cookie Alert",
+    description: "Alerts you of your Booster Cookie status.",
+    category: "General",
+    subcategory: "Alerts"
+  })
+  boosterCookieAlert = true;
+
   // --- ESP's ---
   @SwitchProperty({
     name: "Ghost ESP",

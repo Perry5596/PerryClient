@@ -91,7 +91,7 @@ register("step", () => {
     if (afk && !looking) {
         afk = false;
     }
-}).setDelay(30);
+}).setDelay(60);
 
 // Click to Visit Trigger
 registerWhen(

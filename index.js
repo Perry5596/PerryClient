@@ -1,4 +1,11 @@
-ChatLib.chat("index.js is loading!"); // Debug
+// Debug Message
+register("command", () => {
+  ChatLib.chat(
+    `&3&lPerry&6Client &7Debug:
+ &eCT Version: &7v${ChatTriggers.MODVERSION}
+ &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
+  );
+}).setCommandName("peTest");
 // --------------------------------- Imports ---------------------------------
 
 import settings from "./config";
@@ -16,6 +23,7 @@ import { version, consts } from "./utils/constants";
 import { setRegisters } from "./utils/functions"
 import { openGUI } from "./utils/overlay"
 import { data } from "./utils/data";
+import { getLatestReleaseVersion } from "./utils/updater";
 
 
 // --------------------------------- Welcome Message ---------------------------------
@@ -50,6 +58,7 @@ register("command", (arg) => {
       break;
     case "ver":
     case "version":
+      ChatLib.chat(`${ consts.PREFIX } &bLatest Version: &e${ getLatestReleaseVersion() }`);
       ChatLib.chat(`${ consts.PREFIX } &bYou are currently on version &e${ version }`);
       break;
     case "commands":
@@ -65,15 +74,6 @@ register("command", (arg) => {
 }).setCommandName(`pe`, true).setAliases("perry","perryclient","perryp_", "per").setTabCompletions("gui", "version", "commands", "reload", "help");
 
 // --------------------------------- Extra Triggers ---------------------------------
-// Debug Message
-register("command", () => {
-  ChatLib.chat(
-    `&3&lPerry&6Client &7Debug:
- &eCT Version: &7v${ChatTriggers.MODVERSION}
- &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
-  );
-}).setCommandName("peTest");
-
 // GUI Closed Trigger
 register("guiClosed", (event) => {
   if (event?.toString()?.includes("vigilance")) {

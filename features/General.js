@@ -45,7 +45,7 @@ registerWhen(register("renderWorld", () => {
 }), () => settings.ghostESP && location.getWorld() == "Dwarven Mines");
 
 // Booster Cookie Notification Trigger
-register("postGuiRender", () => {
+registerWhen(register("postGuiRender", () => {
     // postGuiRender may be temporary as it requrires the player to open some form
     // of GUI to trigger the event. If a better event is found, it will be replaced.
     if (location.getWorld() !== undefined) {
@@ -67,13 +67,15 @@ register("postGuiRender", () => {
 
                 if (active) {
                     ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is now active!\n`);
+                    triggerAlert("§a§lCookie Buff Active!", 1000);
                 } else {
                     ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is no longer active!\n`);
+                    triggerAlert("§c§lCookie Buff Inactive!", 1000);
                 }
             }
         }
     }
-});
+}), () => settings.boosterCookieAlert);
 
 // AFK Webhook Notification Trigger
 registerWhen(register("renderTitle", (title) => {

@@ -87,7 +87,6 @@ register("gameUnload", () => {
   }
 });
 
-
 register("command", () => {
     ChatLib.chat(location.getWorld());
 }).setName("getWorld", true);

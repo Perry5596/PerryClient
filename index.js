@@ -1,3 +1,4 @@
+console.log = ChatLib.chat;
 // Debug Message
 register("command", () => {
   ChatLib.chat(
@@ -6,6 +7,7 @@ register("command", () => {
  &3Perry§6Client &7v${JSON.parse(FileLib.read("PerryClient", "metadata.json")).version}`
   );
 }).setCommandName("peTest");
+console.log("index.js is loading!"); // Debug
 // --------------------------------- Imports ---------------------------------
 
 import settings from "./config";

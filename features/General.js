@@ -28,6 +28,11 @@ registerWhen(register("chat", () => {
     triggerAlert("§c§lPIGGY CRACKED!", 1000);
 }).setCriteria("&cYou died and your piggy bank cracked!").setContains(), () => settings.piggyBankAlert);
 
+// Full Sack of Sacks Notification Trigger
+registerWhen(register("chat", () => {
+    triggerAlert("§c§lA SACK IS FULL!", 1000);
+}).setCriteria("&eYour Combat Sack &r&eis full of &r&fEnder Pearl").setContains(), () => settings.sackFullAlert);
+
 // Booster Cookie Notification Trigger
 registerWhen(register("postGuiRender", () => {
     // postGuiRender may be temporary as it requrires the player to open some form
@@ -75,9 +80,6 @@ register("step", () => {
         afk = false;
     }
 }).setDelay(60);
-
-// Full Sack of Sacks Notification Trigger
-// &r&eYour Combat Sack &r&eis full of &r&fEnder Pearl&r&e!&r
 
 // Click to Visit Trigger
 registerWhen(

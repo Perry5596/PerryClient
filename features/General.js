@@ -9,28 +9,17 @@ import { data } from "../utils/data";
 import { sendWebhook } from "../utils/webhook";
 
 // --------------------------------- Variables ---------------------------------
-
-let alertTimer = 0;
-let alertText = "";
 let afk = false;
-
-// --------------------------------- Functions ---------------------------------
-
-// Function to trigger an alert
-function triggerAlert(text, time) {
-    alertText = text; // Set the text to display
-    alertTimer = time; // Set the timer duration (in ticks)
-}
 
 // --------------------------------- Triggers ---------------------------------
 // Piggy Bank Trigger
 registerWhen(register("chat", () => {
-    triggerAlert("§c§lPIGGY CRACKED!", 1000);
+    Client.showTitle("§c§lPIGGY CRACKED!", "", 5, 80, 5);
 }).setCriteria("&cYou died and your piggy bank cracked!").setContains(), () => settings.piggyBankAlert);
 
 // Full Sack of Sacks Notification Trigger
 registerWhen(register("chat", () => {
-    triggerAlert("§c§lA SACK IS FULL!", 1000);
+    Client.showTitle("§c§lA SACK IS FULL!", "", 5, 80, 5);
 }).setCriteria("&eYour Combat Sack &r&eis full of &r&fEnder Pearl").setContains(), () => settings.sackFullAlert);
 
 // Booster Cookie Notification Trigger
@@ -56,10 +45,10 @@ registerWhen(register("postGuiRender", () => {
 
                 if (active) {
                     ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is now active!\n`);
-                    triggerAlert("§a§lCookie Buff Active!", 1000);
+                    Client.showTitle("§a§lCookie Buff Active!", "", 5, 80, 5);
                 } else {
                     ChatLib.chat(`\n${ consts.PREFIX } &aBooster Cookie is no longer active!\n`);
-                    triggerAlert("§c§lCookie Buff Inactive!", 1000);
+                    Client.showTitle("§a§lCookie Buff Inactive!", "", 5, 80, 5);
                 }
             }
         }
@@ -90,28 +79,6 @@ register("chat", (username, event) => {
         .setClick('run_command', `/visit ${username}`));
 }).setCriteria(/(?:(?:Guild|Party|Co-op|From|To) ?(?:>)?? |(?:(?:\[:v:\] )?(?: \+ )?(?:\[(?:[^\s]+)+\] )??))??(?:. )??(?:\[\w{3,}\+{0,2}\] )??(\w{1,16})(?: \[\w{1,6}\])??: .*visit.*$/i),
 () => settings.clickToVisit);
-
-// --------------------------------- Overlays ---------------------------------
-// Alert Overlay
-register("renderOverlay", () => {
-    if (alertTimer > 0) {
-        // Set the scale factor
-        const scale = 4;
-        Renderer.scale(scale, scale);
-
-        // Calculate centered position after scale
-        const centeredX = (Renderer.screen.getWidth() / 2) / scale - Renderer.getStringWidth(alertText) / 2;
-        const centeredY = (Renderer.screen.getHeight() / 3) / scale; // Adjust Y if needed
-
-        // Draw the scaled text
-        Renderer.drawStringWithShadow(alertText, centeredX, centeredY);
-
-        // Reset scaling back to normal
-        Renderer.scale(1, 1);
-
-        alertTimer--; // Decrease the timer each tick
-    }
-});
 
 // --------------------------------- Exports ---------------------------------
 console.log("General.js is done loading!"); // Debug

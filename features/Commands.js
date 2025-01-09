@@ -30,6 +30,8 @@ function sendReminder(reminder) {
     sendWebhook("Reminder", reminder.message);
   }
   ChatLib.chat(`\n${consts.PREFIX}\n&6Reminder: &e"${reminder.message}"\n`);
+  Client.showTitle("&a&lReminder!", reminder.message, 5, 80, 5);
+  World.playSound("random.anvil_land", 1, 1);
   reminders = reminders.filter(r => r !== reminder);
 }
 

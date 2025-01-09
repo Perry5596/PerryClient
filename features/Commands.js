@@ -29,7 +29,7 @@ function sendReminder(reminder) {
   if (settings.webhookToggle && settings.webhookURL.startsWith("https://discord.com/api/webhooks/")) {
     sendWebhook("Reminder", reminder.message);
   }
-  ChatLib.chat(`\n${consts.PREFIX}\n&6Reminder: &e"${reminder.message}"\n`);
+  ChatLib.chat(`${consts.PREFIX}\n&aReminder: &b"${reminder.message}"`);
   Client.showTitle("&a&lReminder!", reminder.message, 5, 80, 5);
   World.playSound("random.anvil_land", 1, 1);
   reminders = reminders.filter(r => r !== reminder);

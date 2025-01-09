@@ -17,6 +17,7 @@ import "./features/General";
 import "./features/Trophy";
 import "./features/Commands";
 import "./features/Dungeons";
+import "./features/Combat";
 
 import "./utils/bazaar";
 import "./utils/uuid";

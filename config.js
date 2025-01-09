@@ -75,6 +75,14 @@ class Settings {
   piggyBankAlert = true;
 
   @SwitchProperty({
+    name: "Sack Full Alert",
+    description: "Alerts you when a sack in your sack of sacks is full.",
+    category: "General",
+    subcategory: "Alerts"
+  })
+  sackFullAlert = true;
+
+  @SwitchProperty({
     name: "Booster Cookie Alert",
     description: "Alerts you of your Booster Cookie status.",
     category: "General",

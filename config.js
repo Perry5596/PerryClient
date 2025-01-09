@@ -17,7 +17,7 @@ import { consts } from "./utils/constants"
 
 @Vigilant("PerryClient", "§3§lPerry§6Client", {
   getCategoryComparator: () => (a, b) => {
-    const categories = ["General", "Dungeons", "Fishing"]
+    const categories = ["General", "Combat", "Dungeons", "Fishing"]
     return categories.indexOf(a.name) - categories.indexOf(b.name);
   }
 })
@@ -28,6 +28,7 @@ class Settings {
   constructor() {
     this.initialize(this);
     this.setCategoryDescription("General", consts.HEADER + "&f&bGeneral Features\n");
+    this.setCategoryDescription("Combat", consts.HEADER + "&f&bCombat Features\n");
     this.setCategoryDescription("Dungeons", consts.HEADER + "&f&bDungeon Features\n");
     this.setCategoryDescription("Fishing", consts.HEADER + "&f&bFishing Features\n");
   }
@@ -81,23 +82,6 @@ class Settings {
   })
   boosterCookieAlert = true;
 
-  // --- ESP's ---
-  @SwitchProperty({
-    name: "Ghost ESP",
-    description: "Renders ESP for Ghosts in the Dwarven Mines.",
-    category: "General",
-    subcategory: "ESP's"
-  })
-  ghostESP = true;
-
-  @ColorProperty({
-    name: 'Ghost ESP Color',
-    description: `Sets the color for the Ghost ESP`,
-    category: 'General',
-    subcategory: "ESP's"
-  })
-  ghostEspColor = Color.RED;
-
   // --- QOL ---
   @SwitchProperty({
     name: 'Click To Visit',
@@ -106,6 +90,24 @@ class Settings {
     subcategory: 'QOL'
   })
   clickToVisit = true;
+
+  // --------------------------------- Combat ---------------------------------
+  // --- ESP's ---
+  @SwitchProperty({
+    name: "Ghost ESP",
+    description: "Renders ESP for Ghosts in the Dwarven Mines.",
+    category: "Combat",
+    subcategory: "ESP's"
+  })
+  ghostESP = true;
+
+  @ColorProperty({
+    name: 'Ghost ESP Color',
+    description: `Sets the color for the Ghost ESP`,
+    category: 'Combat',
+    subcategory: "ESP's"
+  })
+  ghostEspColor = Color.RED;
 
   // --------------------------------- Dungeons ---------------------------------
   // ESP's

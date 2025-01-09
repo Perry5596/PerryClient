@@ -69,6 +69,7 @@ register("command", (arg) => {
       break;
     case "reload":
       location.findWorld();
+      setRegisters();
       ChatLib.chat(`${ consts.PREFIX } &aReloaded all registers!`);
       break;
     default:
@@ -83,5 +84,7 @@ register("guiClosed", (event) => {
     setRegisters()
   }
 });
+
+setRegisters(); // Set all registers to active
 
 console.log("index.js is done loading!"); // Debug
